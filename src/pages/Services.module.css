@@ -1,0 +1,120 @@
+.header {
+  padding-top: calc(68px + 1.75rem);
+  padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.headerSub { max-width: 52ch; margin-top: 0.5rem; }
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.5rem;
+}
+
+@media (max-width: 420px) {
+  .servicesGrid { grid-template-columns: 1fr; }
+}
+
+.serviceCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.125rem;
+  transition: border-color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+
+.serviceCard:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+}
+
+.serviceHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.serviceIcon {
+  color: var(--accent);
+  display: flex;
+  padding: 0.5rem;
+  background: rgba(91, 110, 245, 0.1);
+  border-radius: var(--radius);
+  border: 1px solid rgba(91, 110, 245, 0.2);
+  flex-shrink: 0;
+}
+
+.titleGroup { display: flex; flex-direction: column; gap: 0.25rem; }
+
+.serviceTitle { font-family: 'Space Grotesk', sans-serif; }
+
+.serviceOutcome {
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.serviceDesc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  flex: 1;
+}
+
+.serviceMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.metaLabel {
+  font-size: 0.725rem;
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.serviceTags { display: flex; flex-wrap: wrap; gap: 0.375rem; }
+
+.serviceTeam {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  padding-top: 0.875rem;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+}
+
+.teamChips { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+.teamChip {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-pill);
+  font-weight: 500;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.teamChip:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.cta { padding-bottom: var(--section-gap); }
+
+.ctaBox {
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-xl);
+  padding: clamp(2.5rem, 5vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
