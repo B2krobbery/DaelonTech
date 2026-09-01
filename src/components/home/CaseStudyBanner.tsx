@@ -1,4 +1,4 @@
-import { ExternalLink, Award, MapPin, CheckCircle2, ArrowRight } from 'lucide-react'
+import { ExternalLink, Award, CheckCircle2, Users2 } from 'lucide-react'
 import { motion } from 'framer-motion'
 import projects from '../../data/projects'
 import styles from './CaseStudyBanner.module.css'
@@ -12,13 +12,11 @@ export default function CaseStudyBanner() {
   return (
     <motion.section
       className={styles.banner}
-      initial={{ opacity: 0, y: 24 }}
+      initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.4 }}
     >
-      <div className={styles.glow} aria-hidden="true" />
-
       <div className={styles.inner}>
         {/* Header Bar */}
         <div className={styles.bannerHeader}>
@@ -27,7 +25,21 @@ export default function CaseStudyBanner() {
               <Award size={13} /> Featured Case Study
             </span>
             <span className="badge badge--green">Live Production Site</span>
+
+            {/* Collaboration Badge */}
+            {icck.collaboration && (
+              <a
+                href={icck.collaboration.partnerUrl}
+                target="_blank"
+                rel="noreferrer"
+                className={styles.partnerBadge}
+              >
+                <Users2 size={13} /> Collab: <strong>{icck.collaboration.partnerName}</strong>
+                <ExternalLink size={11} />
+              </a>
+            )}
           </div>
+
           <a
             href={icck.link?.url}
             target="_blank"
@@ -52,7 +64,7 @@ export default function CaseStudyBanner() {
           <div className={styles.caseBox}>
             <h4 className={styles.boxTitle}>01 / The Challenge</h4>
             <p className={styles.boxText}>
-              The Indian Chamber of Commerce in Korea needed a luxury digital presence for their annual flagship gala &amp; business awards event in Seoul. The platform required an elegant aesthetic, business awards nomination portal, and ticketing workflow.
+              The Indian Chamber of Commerce in Korea required a luxury digital platform for their annual gala &amp; business awards event in Seoul. The site needed an executive aesthetic, business awards nomination flow, and ticket reservation portal.
             </p>
           </div>
 
@@ -60,7 +72,7 @@ export default function CaseStudyBanner() {
           <div className={styles.caseBox}>
             <h4 className={styles.boxTitle}>02 / What We Built</h4>
             <p className={styles.boxText}>
-              We designed and engineered a custom web platform featuring a bespoke dark gold design system, business awards submission flow, interactive event schedule, photo recap gallery, and responsive ticketing CTAs.
+              Engineered in collaboration with <strong>Talamanda AI</strong> (talamanda.com). We designed a bespoke dark gold design system, business awards nomination workflow, ticketing portal, and interactive event recap gallery.
             </p>
           </div>
 

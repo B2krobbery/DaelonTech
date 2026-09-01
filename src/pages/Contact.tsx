@@ -100,12 +100,16 @@ export default function Contact() {
               <h3 className={styles.teamSocialsTitle}>Team Profiles</h3>
               {team.map(member => (
                 <div key={member.id} className={styles.memberRow}>
-                  <div
-                    className={styles.memberAvatar}
-                    style={{ '--mc': member.color } as React.CSSProperties}
-                  >
-                    {member.name.split(' ').map(n => n[0]).join('')}
-                  </div>
+                  {member.github ? (
+                    <img src={`${member.github}.png`} alt={`${member.name} avatar`} className={styles.memberAvatar} />
+                  ) : (
+                    <div
+                      className={styles.memberAvatar}
+                      style={{ '--mc': member.color } as React.CSSProperties}
+                    >
+                      {member.name.split(' ').map(n => n[0]).join('')}
+                    </div>
+                  )}
                   <div className={styles.memberInfo}>
                     <span className={styles.memberName}>{member.name}</span>
                     <span className={styles.memberRole}>{member.role.split('·')[0].trim()}</span>

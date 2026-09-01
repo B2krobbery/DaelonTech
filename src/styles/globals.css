@@ -1,29 +1,30 @@
 /* ===================================================
-   DAELONTECH — Obsidian Slate & Precision Design System
+   DAELONTECH — Earthy Cinematic Design System
    =================================================== */
 
 /* ---------- Custom Properties ---------- */
 :root {
-  /* Brand Palette — Executive Obsidian & Precision Indigo */
-  --accent: #6366F1;
-  --accent-2: #818CF8;
-  --accent-glow: rgba(99, 102, 241, 0.15);
-  --green: #10B981;
-  --amber: #D97706;
+  /* Brand Palette — Earthy Cinematic */
+  --accent: #C85A17; /* Terracotta */
+  --accent-2: #E27D40;
+  --accent-glow: rgba(200, 90, 23, 0.15);
+  --green: #7A8B76; /* Sage */
+  --amber: #D4A373; /* Sand */
+  --blue: #4A6C6F; /* Muted Slate Blue if needed */
 
-  /* Surfaces — Dark Slate (default) */
-  --bg: #0B0F17;
-  --bg-2: #111622;
-  --surface: #141A26;
-  --surface-2: #1A2232;
-  --surface-hover: #222C40;
-  --border: rgba(255, 255, 255, 0.08);
-  --border-strong: rgba(255, 255, 255, 0.16);
+  /* Surfaces — Warm Stone (default) */
+  --bg: #1C1B19;
+  --bg-2: #24221F;
+  --surface: #24221F;
+  --surface-2: #2E2C28;
+  --surface-hover: #383530;
+  --border: rgba(242, 235, 229, 0.08);
+  --border-strong: rgba(242, 235, 229, 0.16);
 
-  /* Text — Crisp High Contrast */
-  --text-primary: #F8FAFC;
-  --text-secondary: #94A3B8;
-  --text-muted: #64748B;
+  /* Text — Cream & Oatmeal */
+  --text-primary: #F2EBE5;
+  --text-secondary: #A8A39D;
+  --text-muted: #787571;
 
   /* Spacing */
   --section-gap: clamp(2.5rem, 5vw, 4rem);
@@ -37,10 +38,10 @@
   --radius-xl: 1.5rem;
   --radius-pill: 9999px;
 
-  /* Elevation Shadows (No colored glows) */
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
-  --shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
-  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.5);
+  /* Elevation Shadows (Warm, Deep) */
+  --shadow-sm: 0 1px 3px rgba(15, 14, 13, 0.4);
+  --shadow: 0 4px 20px rgba(15, 14, 13, 0.35);
+  --shadow-lg: 0 12px 40px rgba(15, 14, 13, 0.5);
 
   /* Transitions */
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
@@ -49,16 +50,16 @@
 }
 
 [data-theme='light'] {
-  --bg: #F8FAFC;
-  --bg-2: #F1F5F9;
+  --bg: #F2EBE5;
+  --bg-2: #EBE3DB;
   --surface: #FFFFFF;
-  --surface-2: #F0F4FF;
-  --surface-hover: #E2E8F0;
-  --border: rgba(0, 0, 0, 0.08);
-  --border-strong: rgba(0, 0, 0, 0.16);
-  --text-primary: #0F172A;
-  --text-secondary: #475569;
-  --text-muted: #94A3B8;
+  --surface-2: #F9F6F3;
+  --surface-hover: #E8E0D6;
+  --border: rgba(28, 27, 25, 0.08);
+  --border-strong: rgba(28, 27, 25, 0.16);
+  --text-primary: #1C1B19;
+  --text-secondary: #5C5854;
+  --text-muted: #8C8884;
 }
 
 /* ---------- Reset ---------- */
@@ -179,7 +180,7 @@ input, textarea { font-family: inherit; }
 }
 
 .card--accent:hover {
-  border-color: rgba(99, 102, 241, 0.4);
+  border-color: rgba(200, 90, 23, 0.4);
   box-shadow: var(--shadow);
 }
 
@@ -201,21 +202,21 @@ input, textarea { font-family: inherit; }
 }
 
 .badge--accent {
-  background: rgba(99, 102, 241, 0.12);
-  border-color: rgba(99, 102, 241, 0.28);
-  color: #818CF8;
+  background: rgba(200, 90, 23, 0.12);
+  border-color: rgba(200, 90, 23, 0.28);
+  color: #E27D40;
 }
 
 .badge--green {
-  background: rgba(16, 185, 129, 0.1);
-  border-color: rgba(16, 185, 129, 0.28);
-  color: #34D399;
+  background: rgba(122, 139, 118, 0.12);
+  border-color: rgba(122, 139, 118, 0.28);
+  color: #A3B59F;
 }
 
 .badge--violet {
-  background: rgba(129, 140, 248, 0.12);
-  border-color: rgba(129, 140, 248, 0.28);
-  color: #A5B4FC;
+  background: rgba(212, 163, 115, 0.12); 
+  border-color: rgba(212, 163, 115, 0.28);
+  color: #E6BFA0;
 }
 
 /* ---------- Button ---------- */
@@ -245,14 +246,14 @@ input, textarea { font-family: inherit; }
 
 .btn--primary {
   background: var(--accent);
-  color: #fff;
-  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
+  color: #F2EBE5;
+  box-shadow: 0 4px 14px rgba(200, 90, 23, 0.2);
 }
 
 .btn--primary:hover {
-  background: #4F46E5;
+  background: #B35115;
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+  box-shadow: 0 6px 20px rgba(200, 90, 23, 0.3);
 }
 
 .btn--secondary {
@@ -264,7 +265,7 @@ input, textarea { font-family: inherit; }
 .btn--secondary:hover {
   background: var(--surface-hover);
   border-color: var(--accent);
-  color: #818CF8;
+  color: var(--accent);
   transform: translateY(-1px);
 }
 
@@ -294,6 +295,6 @@ input, textarea { font-family: inherit; }
 
 /* ---------- Selection ---------- */
 ::selection {
-  background: rgba(99, 102, 241, 0.3);
+  background: rgba(200, 90, 23, 0.3);
   color: var(--text-primary);
 }

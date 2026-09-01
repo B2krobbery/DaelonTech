@@ -123,12 +123,16 @@ export default function About() {
           <div className="grid-3">
             {team.map(m => (
               <Link key={m.id} to={`/team/${m.id}`} className={`card card--accent ${styles.memberCard}`}>
-                <div
-                  className={styles.memberAvatar}
-                  style={{ '--mc': m.color } as React.CSSProperties}
-                >
-                  {m.name.split(' ').map(n => n[0]).join('')}
-                </div>
+                {m.github ? (
+                  <img src={`${m.github}.png`} alt={`${m.name} avatar`} className={styles.memberAvatar} />
+                ) : (
+                  <div
+                    className={styles.memberAvatar}
+                    style={{ '--mc': m.color } as React.CSSProperties}
+                  >
+                    {m.name.split(' ').map(n => n[0]).join('')}
+                  </div>
+                )}
                 <div>
                   <h3 className="font-display" style={{ fontSize: '1.1rem', fontWeight: 700 }}>{m.name}</h3>
                   <p style={{ fontSize: '0.725rem', color: 'var(--text-muted)', fontFamily: 'JetBrains Mono', lineHeight: 1.5 }}>

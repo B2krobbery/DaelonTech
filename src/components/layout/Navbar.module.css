@@ -10,7 +10,7 @@
 }
 
 .navbar.scrolled {
-  background: rgba(7, 11, 18, 0.85);
+  background: rgba(28, 27, 25, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-color: var(--border);
@@ -73,7 +73,7 @@
 
 .navLink.active {
   color: var(--accent);
-  background: rgba(91, 110, 245, 0.08);
+  background: rgba(200, 90, 23, 0.08);
 }
 
 .actions {
@@ -168,7 +168,7 @@
 
 .drawerLink.active {
   color: var(--accent);
-  background: rgba(91, 110, 245, 0.08);
+  background: rgba(200, 90, 23, 0.08);
 }
 
 .drawerCta {

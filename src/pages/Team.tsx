@@ -45,9 +45,13 @@ export default function Team() {
                 >
                   {/* Header */}
                   <div className={styles.memberHeader}>
-                    <div className={styles.memberAvatar}>
-                      {member.name.split(' ').map(n => n[0]).join('')}
-                    </div>
+                    {member.github ? (
+                      <img src={`${member.github}.png`} alt={`${member.name} avatar`} className={styles.memberAvatar} />
+                    ) : (
+                      <div className={styles.memberAvatar}>
+                        {member.name.split(' ').map(n => n[0]).join('')}
+                      </div>
+                    )}
                     <div className={styles.memberMeta}>
                       <h2 className={`font-display ${styles.memberName}`}>{member.name}</h2>
                       <p className={styles.memberRole}>{member.role}</p>

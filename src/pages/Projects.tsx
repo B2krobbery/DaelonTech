@@ -80,6 +80,16 @@ export default function Projects() {
                       {project.status === 'Live' ? 'Live Project' : project.status}
                     </span>
                     <span className="badge">{project.year}</span>
+                    {project.collaboration && (
+                      <a
+                        href={project.collaboration.partnerUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="badge badge--accent"
+                      >
+                        Collab: {project.collaboration.partnerName}
+                      </a>
+                    )}
                   </div>
                   {project.link && (
                     <a

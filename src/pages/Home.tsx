@@ -1,21 +1,19 @@
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-import { ArrowRight, ExternalLink, Globe, Smartphone, Palette, Server, Brain, Cloud } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { ArrowRight, ExternalLink, Globe, Smartphone, Palette, Server, Brain, Cloud, Layers, CheckCircle2 } from 'lucide-react'
 import CaseStudyBanner from '../components/home/CaseStudyBanner'
-import HeroArchitectureSpec from '../components/home/HeroArchitectureSpec'
 import projects from '../data/projects'
 import team from '../data/team'
 import services from '../data/services'
 import styles from './Home.module.css'
 
 const serviceIcons: Record<string, React.ReactNode> = {
-  Globe: <Globe size={24} />,
-  Smartphone: <Smartphone size={24} />,
-  Palette: <Palette size={24} />,
-  Server: <Server size={24} />,
-  Brain: <Brain size={24} />,
-  Cloud: <Cloud size={24} />,
+  Globe: <Globe size={22} />,
+  Smartphone: <Smartphone size={22} />,
+  Palette: <Palette size={22} />,
+  Server: <Server size={22} />,
+  Brain: <Brain size={22} />,
+  Cloud: <Cloud size={22} />,
 }
 
 const statusColor: Record<string, string> = {
@@ -31,26 +29,24 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>DaelonTech — We Design & Build Digital Products</title>
+        <title>DaelonTech — Product &amp; Engineering Team</title>
         <meta name="description" content="DaelonTech is a software technology team. We design and build web platforms, mobile apps, backend architectures, and AI systems." />
       </Helmet>
 
-      {/* ===== HERO ===== */}
-      <section className={`${styles.hero} mesh-bg`}>
-        <div className={styles.gridLines} aria-hidden="true" />
-        <div className={`glow-orb glow-orb--blue ${styles.orb1}`} aria-hidden="true" />
-
+      {/* ===== EDITORIAL HERO ===== */}
+      <section className={styles.hero}>
         <div className={`container ${styles.heroInner}`}>
+          {/* Main Hero Column */}
           <div className={styles.heroContent}>
             <p className="section-label">Software &amp; Design Studio</p>
 
             <h1 className={`text-hero font-display ${styles.heroTitle}`}>
-              We design and build <span className="gradient-text">digital products</span>.
+              We design and build digital products.
             </h1>
 
             <p className={`text-body-lg ${styles.heroSub}`}>
-              Web, mobile, backend architectures, AI &amp; automation systems.
-              We turn technical complexity into clean, production-ready software.
+              Web platforms, mobile applications, backend architectures, and AI systems.
+              We turn technical requirements into clean, production-ready software.
             </p>
 
             <div className={styles.heroCtas}>
@@ -63,9 +59,43 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Hero Architecture Spec (Supporting Proof) */}
-          <div className={styles.terminalWrapper}>
-            <HeroArchitectureSpec />
+          {/* Right Editorial Studio Summary Card */}
+          <div className={styles.heroSideCard}>
+            <div className={styles.sideCardHeader}>
+              <span className={styles.sideCardDot} />
+              <span className={styles.sideCardTitle}>STUDIO CAPABILITIES</span>
+            </div>
+
+            <div className={styles.sideCardBody}>
+              <div className={styles.sideCardItem}>
+                <div className={styles.itemHeader}>
+                  <Layers size={16} className={styles.itemIcon} />
+                  <h4>Product &amp; System Design</h4>
+                </div>
+                <p>Bespoke design systems, responsive interfaces, and interaction design.</p>
+              </div>
+
+              <div className={styles.sideCardItem}>
+                <div className={styles.itemHeader}>
+                  <Server size={16} className={styles.itemIcon} />
+                  <h4>Full-Stack &amp; Engineering</h4>
+                </div>
+                <p>React, Next.js, Python/Flask backends, PostgreSQL, and Docker setups.</p>
+              </div>
+
+              <div className={styles.sideCardItem}>
+                <div className={styles.itemHeader}>
+                  <Brain size={16} className={styles.itemIcon} />
+                  <h4>AI &amp; Automation</h4>
+                </div>
+                <p>Multi-agent marketing automation, computer vision, and MCP integrations.</p>
+              </div>
+
+              <div className={styles.sideCardCollab}>
+                <CheckCircle2 size={14} className={styles.collabCheck} />
+                <span>Featured Client Collaboration: <strong>Talamanda AI</strong> &amp; <strong>ICCK Seoul</strong></span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -132,12 +162,16 @@ export default function Home() {
           <div className="grid-3">
             {team.map(member => (
               <Link key={member.id} to={`/team/${member.id}`} className={`card card--accent ${styles.memberCard}`}>
-                <div
-                  className={styles.memberAvatar}
-                  style={{ '--mc': member.color } as React.CSSProperties}
-                >
-                  {member.name.split(' ').map(n => n[0]).join('')}
-                </div>
+                {member.github ? (
+                  <img src={`${member.github}.png`} alt={`${member.name} avatar`} className={styles.memberAvatar} />
+                ) : (
+                  <div
+                    className={styles.memberAvatar}
+                    style={{ '--mc': member.color } as React.CSSProperties}
+                  >
+                    {member.name.split(' ').map(n => n[0]).join('')}
+                  </div>
+                )}
                 <h3 className={`text-h3 font-display ${styles.memberName}`}>{member.name}</h3>
                 <p className={styles.memberRole}>{member.role}</p>
                 <p className={styles.memberTagline}>{member.tagline}</p>
@@ -165,6 +199,9 @@ export default function Home() {
                   <div className={styles.projectMeta}>
                     <span className={`badge ${statusColor[project.status]}`}>{project.status}</span>
                     <span className="badge">{project.year}</span>
+                    {project.collaboration && (
+                      <span className="badge">Collab: {project.collaboration.partnerName}</span>
+                    )}
                   </div>
                   {project.link && (
                     <a

@@ -69,6 +69,7 @@
 .memberAvatar {
   width: 36px;
   height: 36px;
+  object-fit: cover;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--mc), color-mix(in srgb, var(--mc) 50%, #000));
   display: flex;
@@ -153,7 +154,7 @@
 .input:focus, .textarea:focus {
   border-color: var(--accent);
   outline: none;
-  box-shadow: 0 0 0 3px rgba(91, 110, 245, 0.12);
+  box-shadow: 0 0 0 3px rgba(200, 90, 23, 0.12);
 }
 
 .textarea { resize: vertical; min-height: 140px; }

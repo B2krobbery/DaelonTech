@@ -35,7 +35,7 @@
 }
 
 .filterActive {
-  background: rgba(91, 110, 245, 0.15);
+  background: rgba(200, 90, 23, 0.15);
   border-color: var(--accent);
   color: var(--accent);
 }
@@ -68,23 +68,23 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #090E17;
+  background: var(--surface-2);
   border: 1px solid var(--border);
   position: relative;
   overflow: hidden;
 }
 
-.visual_gold-event { border-top: 3px solid #D97706; }
-.visual_agentic-ai { border-top: 3px solid #6366F1; }
-.visual_security-dark { border-top: 3px solid #10B981; }
-.visual_mobile-app { border-top: 3px solid #6366F1; }
-.visual_health-ai { border-top: 3px solid #818CF8; }
-.visual_code-terminal { border-top: 3px solid #4F46E5; }
+.visual_gold-event { border-top: 3px solid var(--amber); }
+.visual_agentic-ai { border-top: 3px solid var(--accent); }
+.visual_security-dark { border-top: 3px solid var(--green); }
+.visual_mobile-app { border-top: 3px solid var(--accent); }
+.visual_health-ai { border-top: 3px solid var(--accent-2); }
+.visual_code-terminal { border-top: 3px solid var(--blue); }
 
-.bannerIconGold { color: #D97706; }
-.bannerIconViolet { color: #818CF8; }
-.bannerIconGreen { color: #10B981; }
-.bannerIconBlue { color: #6366F1; }
+.bannerIconGold { color: var(--amber); }
+.bannerIconViolet { color: var(--accent-2); }
+.bannerIconGreen { color: var(--green); }
+.bannerIconBlue { color: var(--accent); }
 
 .bannerTag {
   font-size: 0.65rem;
@@ -99,7 +99,7 @@
 }
 
 .featured {
-  border-color: rgba(91, 110, 245, 0.25);
+  border-color: rgba(200, 90, 23, 0.25);
 }
 
 .featuredBadge {

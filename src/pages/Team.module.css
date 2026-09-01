@@ -47,6 +47,7 @@
 .memberAvatar {
   width: 64px;
   height: 64px;
+  object-fit: cover;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--mc), color-mix(in srgb, var(--mc) 55%, #000));
   display: flex;

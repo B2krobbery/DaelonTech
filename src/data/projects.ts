@@ -10,10 +10,14 @@ export interface ProjectLink {
   url: string;
 }
 
+export interface CollaborationPartner {
+  partnerName: string;
+  partnerUrl: string;
+}
+
 export interface CaseStudy {
   clientName: string;
   location: string;
-  impactMetrics: { label: string; value: string }[];
   highlights: string[];
 }
 
@@ -27,6 +31,7 @@ export interface ProjectItem {
   team: ProjectMember[];
   featured?: boolean;
   link?: ProjectLink;
+  collaboration?: CollaborationPartner;
   year: string;
   status: 'Live' | 'Completed' | 'In Progress' | 'Research';
   visualType?: 'gold-event' | 'agentic-ai' | 'security-dark' | 'mobile-app' | 'health-ai' | 'code-terminal';
@@ -38,32 +43,29 @@ const projects: ProjectItem[] = [
     id: 'icck-diwali',
     title: 'ICCK Diwali Ball 2026',
     subtitle: 'Event Website & Registration Platform',
-    description: 'Designed and developed the official website for the ICCK Diwali Ball & Business Awards 2026 — a premium gala event at the Fairmont Ambassador, Seoul. The site features a dark gold design system, animated hero section, event information, business awards nomination flow, ticketing CTA, photo gallery with 2025 recap, sponsor sections, and iterative design updates through ongoing client collaboration.',
+    description: 'Designed and developed in collaboration with Talamanda AI (talamanda.com) for the ICCK Diwali Ball & Business Awards 2026 — a premium gala event at the Fairmont Ambassador, Seoul. The site features a luxury dark gold design system, animated hero section, event information, business awards nomination flow, ticketing CTA, photo gallery with 2025 recap, and sponsor sections.',
     tags: ['Web'],
     tech: ['React', 'TypeScript', 'TanStack Router', 'Tailwind CSS', 'Firebase', 'Resend'],
     team: [
       { id: 'visal', name: 'Visal Vijay' },
       { id: 'adarsh', name: 'Adarsh Binu' },
     ],
+    collaboration: {
+      partnerName: 'Talamanda AI',
+      partnerUrl: 'https://talamanda.com',
+    },
     featured: true,
     link: { label: 'View Live Site', url: 'https://diwali.indochamkorea.org/' },
     year: '2026',
     status: 'Live',
-    visualType: 'gold-event',
     caseStudy: {
       clientName: 'Indian Chamber of Commerce in Korea (ICCK)',
       location: 'Fairmont Ambassador, Seoul',
-      impactMetrics: [
-        { label: 'Venue', value: 'Fairmont Seoul' },
-        { label: 'Platform', value: 'React + TS' },
-        { label: 'Status', value: 'Production' },
-        { label: 'Client Feedback', value: 'Iterative Delivery' },
-      ],
       highlights: [
+        'Built in collaboration with Talamanda AI (talamanda.com)',
         'Custom Dark Gold & Champagne Luxury Design System tailored for Korean-Indian business leadership',
         'Interactive Business Awards nomination workflow & ticket reservation portal',
         'Optimised performance, mobile responsiveness, and 2025 event photo recap gallery',
-        'Ongoing production iteration and client relationship management',
       ],
     },
   },
@@ -75,10 +77,13 @@ const projects: ProjectItem[] = [
     tags: ['AI/ML', 'Web', 'Backend'],
     tech: ['Python', 'Next.js', 'React', 'TypeScript', 'SerpAPI', 'Gemini AI', 'Firebase', 'MCP'],
     team: [{ id: 'adarsh', name: 'Adarsh Binu' }],
+    collaboration: {
+      partnerName: 'Talamanda AI',
+      partnerUrl: 'https://talamanda.com',
+    },
     featured: true,
     year: '2026',
     status: 'In Progress',
-    visualType: 'agentic-ai',
   },
   {
     id: 'nulltrace',
@@ -91,7 +96,6 @@ const projects: ProjectItem[] = [
     featured: true,
     year: '2025–2026',
     status: 'Completed',
-    visualType: 'security-dark',
   },
   {
     id: 'echo-runtime',
@@ -103,7 +107,6 @@ const projects: ProjectItem[] = [
     team: [{ id: 'adarsh', name: 'Adarsh Binu' }],
     year: '2026',
     status: 'Completed',
-    visualType: 'code-terminal',
   },
   {
     id: 'hash-farmers',
@@ -115,7 +118,6 @@ const projects: ProjectItem[] = [
     team: [{ id: 'adarsh', name: 'Adarsh Binu' }],
     year: '2025',
     status: 'Completed',
-    visualType: 'security-dark',
   },
   {
     id: 'brain-tumor',
@@ -127,7 +129,6 @@ const projects: ProjectItem[] = [
     team: [{ id: 'adarsh', name: 'Adarsh Binu' }],
     year: '2026',
     status: 'Completed',
-    visualType: 'health-ai',
   },
   {
     id: 'stride-wars',
@@ -139,7 +140,6 @@ const projects: ProjectItem[] = [
     team: [{ id: 'rahul', name: 'Rahul Rajan' }],
     year: '2025',
     status: 'Completed',
-    visualType: 'mobile-app',
   },
   {
     id: 'geosafe',
@@ -151,7 +151,6 @@ const projects: ProjectItem[] = [
     team: [{ id: 'rahul', name: 'Rahul Rajan' }],
     year: '2025',
     status: 'Completed',
-    visualType: 'mobile-app',
   },
   {
     id: 'qlearning-wban',
@@ -163,7 +162,6 @@ const projects: ProjectItem[] = [
     team: [{ id: 'rahul', name: 'Rahul Rajan' }],
     year: '2026',
     status: 'Research',
-    visualType: 'health-ai',
   },
   {
     id: 'hyprland-config',
@@ -175,7 +173,6 @@ const projects: ProjectItem[] = [
     team: [{ id: 'visal', name: 'Visal Vijay' }],
     year: '2025–Present',
     status: 'In Progress',
-    visualType: 'code-terminal',
   },
 ];
 
