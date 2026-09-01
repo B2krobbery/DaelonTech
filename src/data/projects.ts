@@ -43,7 +43,7 @@ const projects: ProjectItem[] = [
     id: 'icck-diwali',
     title: 'ICCK Diwali Ball 2026',
     subtitle: 'Event Website & Registration Platform',
-    description: 'Designed and developed in collaboration with Talamanda AI (talamanda.com) for the ICCK Diwali Ball & Business Awards 2026 — a premium gala event at the Fairmont Ambassador, Seoul. The site features a luxury dark gold design system, animated hero section, event information, business awards nomination flow, ticketing CTA, photo gallery with 2025 recap, and sponsor sections.',
+    description: 'Our team was contracted by Talamanda AI (talamanda.com) to engineer the complete full-stack platform for the ICCK Diwali Ball & Business Awards 2026 — a premium gala event at the Fairmont Ambassador, Seoul. We developed the entire frontend and backend from scratch. The site features a luxury dark gold design system, animated hero section, event information, business awards nomination flow, ticketing CTA, photo gallery with 2025 recap, and sponsor sections.',
     tags: ['Web'],
     tech: ['React', 'TypeScript', 'TanStack Router', 'Tailwind CSS', 'Firebase', 'Resend'],
     team: [
@@ -62,7 +62,7 @@ const projects: ProjectItem[] = [
       clientName: 'Indian Chamber of Commerce in Korea (ICCK)',
       location: 'Fairmont Ambassador, Seoul',
       highlights: [
-        'Built in collaboration with Talamanda AI (talamanda.com)',
+        'Contracted by Talamanda AI (talamanda.com) to engineer the complete full-stack platform (Frontend & Backend)',
         'Custom Dark Gold & Champagne Luxury Design System tailored for Korean-Indian business leadership',
         'Interactive Business Awards nomination workflow & ticket reservation portal',
         'Optimised performance, mobile responsiveness, and 2025 event photo recap gallery',

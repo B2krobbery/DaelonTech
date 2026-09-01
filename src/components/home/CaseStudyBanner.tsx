@@ -72,7 +72,7 @@ export default function CaseStudyBanner() {
           <div className={styles.caseBox}>
             <h4 className={styles.boxTitle}>02 / What We Built</h4>
             <p className={styles.boxText}>
-              Engineered in collaboration with <strong>Talamanda AI</strong> (talamanda.com). We designed a bespoke dark gold design system, business awards nomination workflow, ticketing portal, and interactive event recap gallery.
+              Our team was contracted by <strong>Talamanda AI</strong> (talamanda.com) to engineer the complete full-stack platform. We developed the entire frontend and backend from scratch, designing a bespoke dark gold design system, business awards workflow, ticketing portal, and interactive event recap gallery.
             </p>
           </div>
 
