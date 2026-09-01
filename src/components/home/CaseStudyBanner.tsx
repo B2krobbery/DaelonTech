@@ -24,7 +24,9 @@ export default function CaseStudyBanner() {
             <span className={styles.clientTag}>
               <Award size={13} /> Featured Case Study
             </span>
-            <span className="badge badge--green">Live Production Site</span>
+            <a href={icck.link?.url} target="_blank" rel="noreferrer" className="badge badge--green" style={{ textDecoration: 'none', color: 'inherit' }}>
+              Live Production Site
+            </a>
 
             {/* Collaboration Badge */}
             {icck.collaboration && (
