@@ -37,9 +37,13 @@ export default function TeamMember() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55 }}
           >
-            <div className={styles.avatar}>
-              {member.name.split(' ').map(n => n[0]).join('')}
-            </div>
+            {member.github ? (
+              <img src={`${member.github}.png`} alt={`${member.name} avatar`} className={styles.avatar} />
+            ) : (
+              <div className={styles.avatar}>
+                {member.name.split(' ').map(n => n[0]).join('')}
+              </div>
+            )}
             <div>
               <h1 className={`text-h1 font-display ${styles.heroName}`}>{member.name}</h1>
               <p className={styles.heroRole}>{member.role}</p>
