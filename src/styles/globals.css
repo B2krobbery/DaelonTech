@@ -16,6 +16,7 @@
   --bg: #1C1B19;
   --bg-2: #24221F;
   --surface: #24221F;
+  --surface-glass: rgba(36, 34, 31, 0.4);
   --surface-2: #2E2C28;
   --surface-hover: #383530;
   --border: rgba(242, 235, 229, 0.08);
@@ -53,6 +54,7 @@
   --bg: #F2EBE5;
   --bg-2: #EBE3DB;
   --surface: #FFFFFF;
+  --surface-glass: rgba(255, 255, 255, 0.6);
   --surface-2: #F9F6F3;
   --surface-hover: #E8E0D6;
   --border: rgba(28, 27, 25, 0.08);
@@ -164,7 +166,9 @@ input, textarea { font-family: inherit; }
 
 /* ---------- Surface Utilities ---------- */
 .card {
-  background: var(--surface);
+  background: var(--surface-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 1.75rem;
