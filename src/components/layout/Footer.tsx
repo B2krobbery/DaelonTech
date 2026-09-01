@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
-import { Zap, Mail, Github, Linkedin, ExternalLink } from 'lucide-react'
+import { Mail, Github, Linkedin, ExternalLink } from 'lucide-react'
+import Logo from '../common/Logo'
 import styles from './Footer.module.css'
 
 const navLinks = [
@@ -38,7 +39,7 @@ export default function Footer() {
         {/* Brand */}
         <div className={styles.brand}>
           <Link to="/" className={styles.logo}>
-            <Zap size={18} strokeWidth={2.5} />
+            <Logo size={24} />
             DaelonTech
           </Link>
           <p className={styles.tagline}>

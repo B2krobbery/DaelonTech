@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { Menu, X, Sun, Moon, Zap } from 'lucide-react'
+import { Menu, X, Sun, Moon } from 'lucide-react'
+import Logo from '../common/Logo'
 import styles from './Navbar.module.css'
 
 const navLinks = [
@@ -41,7 +42,7 @@ export default function Navbar() {
     <header className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
       <div className={`container ${styles.inner}`}>
         <Link to="/" className={styles.logo} onClick={() => setMenuOpen(false)}>
-          <Zap size={20} strokeWidth={2.5} />
+          <Logo size={24} />
           <span>DaelonTech</span>
         </Link>
 
